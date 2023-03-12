@@ -41,22 +41,22 @@ app.get("/health", (req, res) => {
 //   });
 // });
 
-// // Read
-// app.get("/notifications", (req, res) => {
-//   const sql = "SELECT * FROM NOTIFICATIONS";
-//   pool.getConnection((err, connection) => {
-//     if (err) {
-//       throw err;
-//     }
-//     connection.query(sql, (err, result) => {
-//       connection.release();
-//       if (err) {
-//         throw err;
-//       }
-//       res.json(result);
-//     });
-//   });
-// });
+// Read
+app.get("/notifications", (req, res) => {
+  const sql = "SELECT * FROM NOTIFICATIONS";
+  pool.getConnection((err, connection) => {
+    if (err) {
+      throw err;
+    }
+    connection.query(sql, (err, result) => {
+      connection.release();
+      if (err) {
+        throw err;
+      }
+      res.json(result);
+    });
+  });
+});
 
 // // Read
 // app.get("/notifications/:id", (req, res) => {
