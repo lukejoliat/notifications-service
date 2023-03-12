@@ -5,13 +5,13 @@ import cors from "cors";
 const app = express();
 
 // Configure MySQL connection pool
-// const pool = mysql.createPool({
-//   connectionLimit: 10,
-//   host: "notifications-instance-1.cvzig3mkblo6.us-east-1.rds.amazonaws.com",
-//   user: "admin",
-//   password: "password",
-//   database: "notifications",
-// });
+const pool = mysql.createPool({
+  connectionLimit: 10,
+  host: "notifications-instance-1.cvzig3mkblo6.us-east-1.rds.amazonaws.com",
+  user: "admin",
+  password: "password",
+  database: "notifications",
+});
 
 // Enable CORS
 app.use(cors());
