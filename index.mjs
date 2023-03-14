@@ -4,12 +4,14 @@ import cors from "cors";
 
 const app = express();
 
+console.log('process.env', process.env)
+
 // Configure MySQL connection pool
 const pool = mysql.createPool({
   connectionLimit: 10,
-  host: "notifications-instance-1.cvzig3mkblo6.us-east-1.rds.amazonaws.com",
+  host: process.env.NOTIFICATION_DB_HOST,
   user: "admin",
-  password: "password",
+  password: NOTIFICATION_DB_PASS,
   database: "notifications",
 });
 
