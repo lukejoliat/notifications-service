@@ -11,7 +11,7 @@ const pool = mysql.createPool({
   connectionLimit: 10,
   host: process.env.NOTIFICATION_DB_HOST,
   user: "admin",
-  password: NOTIFICATION_DB_PASS,
+  password: process.env.NOTIFICATION_DB_PASS,
   database: "notifications",
 });
 
