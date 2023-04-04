@@ -23,7 +23,6 @@ router.post("/", (req, res) => {
 
 // Read
 router.get("/", (req, res) => {
-    console.log("notifications request received");
     const sql = "SELECT * FROM NOTIFICATIONS";
     pool.getConnection((err, connection) => {
         if (err) {
